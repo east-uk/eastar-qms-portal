@@ -1371,7 +1371,7 @@ select.apple-input {
       <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;">
         <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid rgba(192,206,209,0.2);">
           <span style="color:#566062;">플랫폼 버전</span>
-          <span style="font-weight:700;color:#1a1c1d;" id="sysVersion">v19.4.3</span>
+          <span style="font-weight:700;color:#1a1c1d;" id="sysVersion">v19.4.4</span>
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid rgba(192,206,209,0.2);">
           <span style="color:#566062;">환경</span>
@@ -1504,7 +1504,7 @@ select.apple-input {
 // CONFIG
 // ============================================================================
 const CONFIG = {
-  version: '19.4.3',
+  version: '19.4.4',
   storage: {
     data: 'eastar_maturity_data',
     auditors: 'eastar_auditors',
@@ -9823,7 +9823,7 @@ async function copyEnvData() {
 
   showLoading('환경 간 데이터 복사 중...');
   try {
-    const collections = ['assessments', 'auditors', 'schedule', 'customStations', 'users'];
+    const collections = ['assessments', 'auditors', 'schedule', 'customStations', 'users', 'car'];
     const migrationData = {};
     let count = 0;
     for (const col of collections) {
@@ -11823,6 +11823,7 @@ Object.assign(window, {
   renderAuditorPicker, addAuditorTag, removeAuditorTag, importAuditorExcel, toggleCategoryNA,
   // Firebase
   uploadAllToFirebase, downloadFromFirebase, migrateDataToEnvPrefix,
+  copyEnvData, toggleCopyEnvPanel,
   // Environment
   APP_ENV, ENV_PREFIX,
   // Auth
